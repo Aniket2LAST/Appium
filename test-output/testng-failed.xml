@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testClass.SignTest1">
+      <class name="testClass.SignUpBranchTest">
         <methods>
           <include name="generateRandomLastName"/>
+          <include name="sign"/>
           <include name="generateBenefitOrderName"/>
           <include name="generateBranchName"/>
           <include name="afterMethod"/>
-          <include name="sign"/>
           <include name="teardownalchemy"/>
           <include name="generateBranchMemberName"/>
           <include name="generateBenefitName"/>
@@ -20,7 +20,7 @@
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateBonusName"/>
         </methods>
-      </class> <!-- testClass.SignTest1 -->
+      </class> <!-- testClass.SignUpBranchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

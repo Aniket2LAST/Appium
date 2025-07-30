@@ -1,75 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-30T10:04:01 IST" name="Default suite" finished-at="2025-07-30T10:05:53 IST" duration-ms="111671">
+  <suite started-at="2025-07-30T17:43:56 IST" name="Default suite" finished-at="2025-07-30T17:46:39 IST" duration-ms="163735">
     <groups>
     </groups>
-    <test started-at="2025-07-30T10:04:01 IST" name="Default test" finished-at="2025-07-30T10:05:53 IST" duration-ms="111671">
-      <class name="testClass.SignTest1">
-        <test-method is-config="true" signature="generateAndroidBenefitname()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateAndroidBenefitname" finished-at="2025-07-30T10:04:01 IST" duration-ms="18" status="PASS">
+    <test started-at="2025-07-30T17:43:56 IST" name="Default test" finished-at="2025-07-30T17:46:39 IST" duration-ms="163735">
+      <class name="testClass.SignUpBranchTest">
+        <test-method is-config="true" signature="generateAndroidBenefitname()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateAndroidBenefitname" finished-at="2025-07-30T17:43:56 IST" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateAndroidBenefitname -->
-        <test-method is-config="true" signature="generateBenefitName()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateBenefitName" finished-at="2025-07-30T10:04:01 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateBenefitName()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateBenefitName" finished-at="2025-07-30T17:43:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBenefitName -->
-        <test-method is-config="true" signature="generateBenefitOrderName()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateBenefitOrderName" finished-at="2025-07-30T10:04:01 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateBenefitOrderName()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateBenefitOrderName" finished-at="2025-07-30T17:43:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBenefitOrderName -->
-        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateBranchMemberName" finished-at="2025-07-30T10:04:01 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateBranchMemberName -->
-        <test-method is-config="true" signature="generateBonusName()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateBonusName" finished-at="2025-07-30T10:04:01 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateBonusName()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateBonusName" finished-at="2025-07-30T17:43:56 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBonusName -->
-        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateRandomBranchMemberNumber" finished-at="2025-07-30T10:04:01 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateBranchMemberName" finished-at="2025-07-30T17:43:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generateRandomBranchMemberNumber -->
-        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateBranchName" finished-at="2025-07-30T10:04:01 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- generateBranchMemberName -->
+        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateBranchName" finished-at="2025-07-30T17:43:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchName -->
-        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateRandomLastName" finished-at="2025-07-30T10:04:01 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateRandomBranchMemberNumber" finished-at="2025-07-30T17:43:56 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generateRandomLastName -->
-        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="generateRandomNumber" finished-at="2025-07-30T10:04:01 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- generateRandomBranchMemberNumber -->
+        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateRandomNumber" finished-at="2025-07-30T17:43:56 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomNumber -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:01 IST" name="setup" finished-at="2025-07-30T10:04:25 IST" duration-ms="23724" status="PASS">
+        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="generateRandomLastName" finished-at="2025-07-30T17:43:56 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateRandomLastName -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:43:56 IST" name="setup" finished-at="2025-07-30T17:44:21 IST" duration-ms="25613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="sign()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:04:25 IST" name="sign" finished-at="2025-07-30T10:05:52 IST" duration-ms="87651" status="PASS">
+        <test-method signature="sign()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:44:21 IST" name="sign" finished-at="2025-07-30T17:46:39 IST" duration-ms="137947" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Can't locate an element by this strategy: By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("Please enter OTP character 1")})]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("Please enter OTP character 1")})
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$Addgyg0B.click(Unknown Source)
+at PageObject.BranchSignUp.signUpBranch(BranchSignUp.java:148)
+at testClass.SignUpBranchTest.sign(SignUpBranchTest.java:21)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@590dea35 (tried for 1 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+... 33 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("Please enter OTP character 1")})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: driver.version: RemoteWebDriver
+at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+... 35 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sign -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:05:53 IST" name="afterMethod" finished-at="2025-07-30T10:05:53 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:46:39 IST" name="afterMethod" finished-at="2025-07-30T17:46:39 IST" duration-ms="5" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=sign status=SUCCESS method=SignTest1.sign()[pri:0, instance:testClass.SignTest1@1199fe66] output={null}]]]>
+                <![CDATA[[TestResult name=sign status=FAILURE method=SignUpBranchTest.sign()[pri:0, instance:testClass.SignUpBranchTest@1199fe66] output={null}]]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="teardownalchemy()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:05:53 IST" name="teardownalchemy" finished-at="2025-07-30T10:05:53 IST" duration-ms="3" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "utilities.BaseClass.alcDriver" is null]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "utilities.BaseClass.alcDriver" is null
-at utilities.BaseClass.teardownalchemy(BaseClass.java:420)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "ts" is null
+at utilities.BaseClass.afterMethod(BaseClass.java:408)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -78,9 +143,15 @@ at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvoca
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
 at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
 at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfigurations(TestMethodWorker.java:229)
-at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:215)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:779)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:755)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:848)
 at org.testng.TestRunner.run(TestRunner.java:621)
@@ -102,12 +173,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="teardownalchemy()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:46:39 IST" name="teardownalchemy" finished-at="2025-07-30T17:46:39 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- teardownalchemy -->
-        <test-method is-config="true" signature="teardownapp()[pri:0, instance:testClass.SignTest1@1199fe66]" started-at="2025-07-30T10:05:53 IST" name="teardownapp" finished-at="2025-07-30T10:05:53 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="teardownapp()[pri:0, instance:testClass.SignUpBranchTest@1199fe66]" started-at="2025-07-30T17:46:39 IST" name="teardownapp" finished-at="2025-07-30T17:46:39 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownapp -->
-      </class> <!-- testClass.SignTest1 -->
+      </class> <!-- testClass.SignUpBranchTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
