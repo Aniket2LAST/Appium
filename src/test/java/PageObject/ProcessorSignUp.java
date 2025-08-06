@@ -7,14 +7,26 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.PressesKey;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utilities.BaseClass;
 
+
+
+
 public class ProcessorSignUp extends BaseClass {
 
+	@AndroidFindBy(uiAutomator="new UiSelector().text(\"English\")")	
+	 public WebElement english;	
+	@AndroidFindBy(uiAutomator="new UiSelector().text(\"Continue\")")
+	public WebElement continu;
 @AndroidFindBy(uiAutomator="new UiSelector().text(\"Sign up\")")	
  public WebElement signBtn;
+@AndroidFindBy(uiAutomator="new UiSelector().text(\"Add material\")")	
+public WebElement addmat;
 @AndroidFindBy(uiAutomator="new UiSelector().className(\"android.view.View\").instance(15)")
 public WebElement recycleBussiness;
 	
@@ -94,11 +106,13 @@ public WebElement HDPE;
 @AndroidFindBy(uiAutomator="new UiSelector().text(\"Next\")")
 public WebElement nextBtn;
 
-@AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"ion-input-8\")")
+@AndroidFindBy(uiAutomator="new UiSelector().resourceId(\"ion-input-4\")")
 public WebElement price;
 
 @AndroidFindBy(uiAutomator="new UiSelector().text(\"Save material\")")
 public WebElement saveMaterial;
+@AndroidFindBy(uiAutomator="new UiSelector().className(\"android.view.View\").instance(9)")
+public WebElement color;
 
 
 public ProcessorSignUp(AndroidDriver driver) {
@@ -108,8 +122,11 @@ public ProcessorSignUp(AndroidDriver driver) {
 public void signUpProcess() throws InterruptedException, IOException {
 	
 	PB_SignUp1 pb=new PB_SignUp1(pbDriver);
+	english.click();
+	continu.click();
 	signBtn.click();
-	recycleBussiness.click();
+	//recycleBussiness.click();
+	tap(500,1400);
 	Thread.sleep(3000);
 	processorSign.click();
 	
@@ -136,8 +153,9 @@ public void signUpProcess() throws InterruptedException, IOException {
 		 * tap(640,1570); tap(640,1570); tap(350,1570); tap(640,1570); tap(350,1570);
 		 * tap(350,1570);
 		 */
-	 pb.generateNo();
 	 
+	 pb.generateNo();
+	 tap(530,1450);
 	 tap(859,1967);
 	 scroll(770,1000,770,1300);
 	 tap(930,1500);
@@ -147,7 +165,7 @@ public void signUpProcess() throws InterruptedException, IOException {
 	 cnfPassword.sendKeys("123456a");
 	 Thread.sleep(2000);
 	 scroll(500,2000,500,500);
-	 businessName.sendKeys("PlasticHub");
+	 businessName.sendKeys(generateRandomString(8));
 	 address.sendKeys("Himalya");
 	 city.sendKeys("DElhi");
 	 agree.click();
@@ -156,15 +174,43 @@ public void signUpProcess() throws InterruptedException, IOException {
 	 enterOtpWithADB("778899");	
 	 //permissionFinal.click();
 	 
-	 tap(980,655);
-	 HDPE.click();
+	 
+	 // Add material part
+	 Thread.sleep(2000);
+	 addmat.isDisplayed();
+	 tap(981,450);
 	 nextBtn.click();
+	 Thread.sleep(3000);
+	 //HDPE.click();
+	 tap(100,760);
 	 nextBtn.click();
+	 
+	 //condition
+	 tap(110,1907);
 	 nextBtn.click();
-	 tap(980,1310);
-	 price.sendKeys("500");
+	 
+	 //color.click();
+	 tap(110,710);
 	 nextBtn.click();
-	 saveMaterial.click();
+	 Thread.sleep(4000);
+	 //tap(980,1310);
+	
+	 //price.click();
+	 tap(200,1800);
+	 Thread.sleep(2000);
+	 //price.sendKeys("10");
+	 pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
+	 pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_0));
+	 
+	 Thread.sleep(5000);
+	
+	 nextBtn.click();
+	 
+	 //saveMaterial.isDisplayed();
+	 //saveMaterial.click();
+	 tap(550,2040);
+	
+	
 }
 
 public void enterOtpWithADB(String otp) throws IOException {
@@ -178,6 +224,12 @@ public static String generateRandomString(int length) {
         name.append(chars.charAt(random.nextInt(chars.length())));
     }
     return name.toString();
+}
+
+public static String getRandomNumber() {
+    Random random = new Random();
+    int randomNo = random.nextInt(401) + 100; // 100–500
+    return String.valueOf(randomNo);
 }
 	 
 }

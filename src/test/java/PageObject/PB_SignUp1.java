@@ -4,7 +4,9 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -124,7 +126,9 @@ public WebElement searchDropDown;
 	 SignUpbtn.click();
 	 Collectorl.click();
 	 
-	 cameraicon.click();
+	// cameraicon.click();
+	 tap(682,617);
+	 
 	 takePhoto.click();
 	 //permission.click();
 	 cameraIcon1.click();
@@ -171,17 +175,38 @@ public WebElement searchDropDown;
  }
 
  // Method to copy to clipboard
- public static void copyToClipboard(String text) {
-     StringSelection selection = new StringSelection(text);
+ public static void copyToClipboard(String number) {
+     StringSelection selection = new StringSelection(number);
      Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
  }
  
+
  public void generateNo() throws InterruptedException {
-	 String otp = generateRandomOTP();
-     copyToClipboard(otp);
-     System.out.println("Generated OTP copied to clipboard: " + otp);
+	 
+	 Set<Integer> sixDigitNumbers = new HashSet<>();
+     Random random = new Random();
+
+     // Generate 5 unique 6-digit numbers
+     while (sixDigitNumbers.size() < 5) {
+         int number = 100000 + random.nextInt(900000); // 100000–999999
+         String strNO = String.valueOf(number);
+         copyToClipboard(strNO);
+         sixDigitNumbers.add(number);
+     }
+
+     // Print the generated numbers
+     System.out.println("6-digit numbers: " + sixDigitNumbers);
      tap(540,1450);
  }
+	 
+	 
+	 
+	/*
+	 * Set<Integer> phoneNo = generateRandomOTP(); copyToClipboard(phoneNo);
+	 * System.out.println("Generated OTP copied to clipboard: " + phoneNo);
+	 * tap(540,1450);
+	 */
+ 
  
  public static String generateRandomString(int length) {
 	    String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

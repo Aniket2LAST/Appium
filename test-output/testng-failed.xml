@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testClass.SignUpBranchTest">
+      <class name="testClass.ProcessorSignUpTest">
         <methods>
           <include name="generateRandomLastName"/>
-          <include name="sign"/>
           <include name="generateBenefitOrderName"/>
           <include name="generateBranchName"/>
+          <include name="signUpProcessor"/>
           <include name="afterMethod"/>
           <include name="teardownalchemy"/>
           <include name="generateBranchMemberName"/>
@@ -20,7 +20,7 @@
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateBonusName"/>
         </methods>
-      </class> <!-- testClass.SignUpBranchTest -->
+      </class> <!-- testClass.ProcessorSignUpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

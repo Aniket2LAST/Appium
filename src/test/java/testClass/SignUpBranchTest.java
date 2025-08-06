@@ -15,9 +15,9 @@ public class SignUpBranchTest extends BaseClass {
 	try {
 		st = new BranchSignUp(pbDriver);
 	} catch (Exception e) {
-		// TODO Auto-generated catch block
+		
 		e.printStackTrace();
 	}
-	st.signUpBranch();
+	st.signUpBranch();        
    }
 }

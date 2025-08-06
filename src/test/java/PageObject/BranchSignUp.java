@@ -140,7 +140,7 @@ public void signUpBranch() throws InterruptedException, IOException {
 	 cnfPassword.sendKeys("123456a");
 	 Thread.sleep(2000);
 	 scroll(500,2000,500,500);
-	 businessName.sendKeys("PlasticHub");
+	 businessName.sendKeys(generateRandomString(8));
 	 address.sendKeys("Himalya");
 	 city.sendKeys("DElhi");
 	 agree.click();
