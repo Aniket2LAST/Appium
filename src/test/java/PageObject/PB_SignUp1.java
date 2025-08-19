@@ -122,12 +122,27 @@ public WebElement searchDropDown;
  public WebElement permissionFinal;
  
  public void SignUpCollector() throws InterruptedException, IOException {
-	 continueb.click();
+	 
+	  try {
+	        if (continueb.isDisplayed()) {
+	            continueb.click();
+	        }
+	    } catch (Exception ignored) {}
+
+	    // Optional - tap "English" if it appears (create WebElement if needed)
+	   
+	 
+	 
+	 
+	 //continueb.click();
 	 SignUpbtn.click();
+	 Thread.sleep(2000);
 	 Collectorl.click();
 	 
-	// cameraicon.click();
-	 tap(682,617);
+	 Thread.sleep(2000);
+	 cameraicon.click();
+	
+		/* tap(682,617); */
 	 
 	 takePhoto.click();
 	 //permission.click();
@@ -141,32 +156,45 @@ public WebElement searchDropDown;
 	 Thread.sleep(4000);
 	 searchDropDown.sendKeys("+63");
 	 selectPhilip.click();
+	
 	 phoneNumber.click();
-	 tap(264,2263);
-	 tap(202,1955);
-	 
-		/*
-		 * tap(640,1570); tap(640,1570); tap(350,1570); tap(640,1570); tap(350,1570);
-		 * tap(350,1570);
-		 */
+	 tap(100,1517);
+	 tap(400,1370);
 	 generateNo();
+	 tap(620,425);
+	 tap(942,942);
 	 
-	 tap(859,1967);
 	 scroll(770,1000,770,1300);
 	 tap(930,1500);
 	 gender.click();
 	 selectGendermale.click();
 	 password.sendKeys("123456a");
 	 cnfPassword.sendKeys("123456a");
-	 scroll(500,1700,500,2000);
+	 scroll(500,1700,500,2300);
 	 agree.click();
 	 register.click();
 	 otp1.click(); // Focus the first box
-	 enterOtpWithADB("778899");	
+	 Thread.sleep(3000);
+	 
+	 //enterOtpWithADB("778899");
+	 tap(100,1517);
+	 tap(400,1370);
+	 otpGenearte();
+	 tap(620,425);
+	 tap(942,942);
 	 //permissionFinal.click();
  }
- public void enterOtpWithADB(String otp) throws IOException {
+ public void enterOtpWithADB1(String otp) throws IOException {
 	    Runtime.getRuntime().exec("adb shell input text " + otp);
+	}
+ 
+ public void enterOtpWithADB(String otp) throws IOException, InterruptedException {
+	    // Step 1: Tap the OTP field (adjust coordinates if needed)
+	    Runtime.getRuntime().exec("adb shell input tap 150 1140");  // ✅ Fixed ADB tap
+	    Thread.sleep(1000); // Give time for focus
+
+	    // Step 2: Type the OTP
+	    Runtime.getRuntime().exec("adb shell input text " + otp);   // ✅ Correct
 	}
  public static String generateRandomOTP() {
      Random rand = new Random();
@@ -174,30 +202,7 @@ public WebElement searchDropDown;
      return String.valueOf(otp);
  }
 
- // Method to copy to clipboard
- public static void copyToClipboard(String number) {
-     StringSelection selection = new StringSelection(number);
-     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
- }
- 
 
- public void generateNo() throws InterruptedException {
-	 
-	 Set<Integer> sixDigitNumbers = new HashSet<>();
-     Random random = new Random();
-
-     // Generate 5 unique 6-digit numbers
-     while (sixDigitNumbers.size() < 5) {
-         int number = 100000 + random.nextInt(900000); // 100000–999999
-         String strNO = String.valueOf(number);
-         copyToClipboard(strNO);
-         sixDigitNumbers.add(number);
-     }
-
-     // Print the generated numbers
-     System.out.println("6-digit numbers: " + sixDigitNumbers);
-     tap(540,1450);
- }
 	 
 	 
 	 

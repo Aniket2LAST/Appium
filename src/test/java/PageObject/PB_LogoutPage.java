@@ -14,17 +14,29 @@ public PB_LogoutPage (AndroidDriver driver) {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-@AndroidFindBy(xpath = "//android.widget.Button[@text=\"menu\"]")
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"menu\")")
 public WebElement log;
+
 
 public void clickmenu() throws InterruptedException {
 	tap(60,170);
 }
 public void clicklogout() throws InterruptedException {
+	//for collector
 	tap(121,1330);
+	
+	//for branch
+	//tap(120,1500);
 }
 public void logout() throws InterruptedException {
 	log.click();
 	clicklogout();
 }
+public void logOutMain() throws InterruptedException {
+	if(log.isDisplayed()) {
+	tap(60,170);
+	tap(120,1500);
+	}
+}
+
 }

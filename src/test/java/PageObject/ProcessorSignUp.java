@@ -114,6 +114,11 @@ public WebElement saveMaterial;
 @AndroidFindBy(uiAutomator="new UiSelector().className(\"android.view.View\").instance(9)")
 public WebElement color;
 
+@AndroidFindBy(uiAutomator="new UiSelector().text(\"Add new material\")")
+public WebElement addMaterial;
+@AndroidFindBy(uiAutomator="new UiSelector().text(\"Add material\")")
+public WebElement Add_Material;
+
 
 public ProcessorSignUp(AndroidDriver driver) {
 	PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -121,9 +126,20 @@ public ProcessorSignUp(AndroidDriver driver) {
 
 public void signUpProcess() throws InterruptedException, IOException {
 	
-	PB_SignUp1 pb=new PB_SignUp1(pbDriver);
-	english.click();
-	continu.click();
+	try {
+		if(english.isDisplayed()) {
+			english.click();
+		}
+	}catch(Exception ignored) {}
+	
+	try {
+		if(continu.isDisplayed()) {
+			continu.click();
+		}
+	}catch(Exception ignored) {}
+	
+	//english.click();
+	//continu.click();
 	signBtn.click();
 	//recycleBussiness.click();
 	tap(500,1400);
@@ -146,17 +162,13 @@ public void signUpProcess() throws InterruptedException, IOException {
 	selectPhilip.click();
 	
 	 phoneNumber.click();
-	 tap(264,2263);
-	 tap(202,1955);
+	 phoneNumber.click();
+	 tap(100,1517);
+	 tap(400,1370);
+	 generateNo();
+	 tap(620,580);
+	 tap(950,1110);
 	 
-		/*
-		 * tap(640,1570); tap(640,1570); tap(350,1570); tap(640,1570); tap(350,1570);
-		 * tap(350,1570);
-		 */
-	 
-	 pb.generateNo();
-	 tap(530,1450);
-	 tap(859,1967);
 	 scroll(770,1000,770,1300);
 	 tap(930,1500);
 	 gender.click();
@@ -171,7 +183,12 @@ public void signUpProcess() throws InterruptedException, IOException {
 	 agree.click();
 	 register.click();
 	 otp1.click(); // Focus the first box
-	 enterOtpWithADB("778899");	
+	 //enterOtpWithADB("778899");	
+	 tap(100,1517);
+	 tap(400,1370);
+	 otpGenearte();
+	 tap(620,425);
+	 tap(942,942);
 	 //permissionFinal.click();
 	 
 	 
@@ -183,6 +200,43 @@ public void signUpProcess() throws InterruptedException, IOException {
 	 Thread.sleep(3000);
 	 //HDPE.click();
 	 tap(100,760);
+	 nextBtn.click();
+	 
+	 //condition
+	 tap(110,1907);
+	 nextBtn.click();
+	 
+	 //color.click();
+	 tap(110,710);
+	 nextBtn.click();
+	 Thread.sleep(4000);
+	 //tap(980,1310);
+	
+	 //price.click();
+	 tap(200,1850);
+	 Thread.sleep(2000);
+	 //price.sendKeys("10");
+	 pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
+	 pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_0));
+	 
+	 Thread.sleep(5000);
+	
+	 nextBtn.click();
+	 
+	 //saveMaterial.isDisplayed();
+	 //saveMaterial.click();
+	 tap(550,2040);
+	 Thread.sleep(5000);
+	addMaterial.click();
+	
+}
+public void addMaterial() throws InterruptedException {
+	addMaterial.click();
+	tap(981,450);
+	 nextBtn.click();
+	 Thread.sleep(3000);
+	 //HDPE.click();
+	 tap(112,893);
 	 nextBtn.click();
 	 
 	 //condition
@@ -208,10 +262,12 @@ public void signUpProcess() throws InterruptedException, IOException {
 	 
 	 //saveMaterial.isDisplayed();
 	 //saveMaterial.click();
-	 tap(550,2040);
-	
-	
+	 Thread.sleep(3000);
+	 saveMaterial.click();
+	 Thread.sleep(7000);
+	 //tap(550,2040);
 }
+
 
 public void enterOtpWithADB(String otp) throws IOException {
     Runtime.getRuntime().exec("adb shell input text " + otp);

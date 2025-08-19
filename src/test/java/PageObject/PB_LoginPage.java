@@ -26,6 +26,10 @@ public PB_LoginPage(AndroidDriver driver) {
 		
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
+@AndroidFindBy(uiAutomator="new UiSelector().text(\"English\")")
+public WebElement English;
+@AndroidFindBy(uiAutomator="new UiSelector().text(\"Continue\")")
+public WebElement continu;
 @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Account Suspended\")")
 public WebElement susmem;
 @AndroidFindBy(uiAutomator ="new UiSelector().text(\"Log in\").instance(1)")
@@ -195,6 +199,8 @@ public void login(String phoneNumber, String password, String code) throws Inter
 	}catch(Exception e) {
 		clickFinalLogin();
 	}
+	English.click();
+	continu.click();
 	countrycode.click();
 	Thread.sleep(5000);
 	searchcountries.sendKeys(code);

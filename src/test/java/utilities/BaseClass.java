@@ -2,13 +2,20 @@ package utilities;
 
 
 
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import io.qameta.allure.Allure;
@@ -30,6 +37,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -44,7 +52,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 @SuppressWarnings("deprecation")
 public class BaseClass {
-		
+	
+	
+	
+	protected static List<Integer> sixDigitNumbers = new ArrayList<>();
+
 	public String string;
 	public static String benefitordername;
 	public static String androidbenefitname;
@@ -146,6 +158,8 @@ public class BaseClass {
 	
 	public static String temp= "staging-admin.plasticbank.com";
 	public static String actual = "staging-admin.plasticbank.com";
+	@FindBy(xpath = "//div[@class='loader circle-loader']") 
+	WebElement loader;
 
 	@Parameters({"udid"})
 	@BeforeClass
@@ -154,15 +168,16 @@ public class BaseClass {
           
 		
 		//  WebDriverManager.chromedriver().setup(); 
-		/*
-		 * alcDriver = new ChromeDriver(); alcDriver.manage().window().maximize();
-		 * alcDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5000));
-		 * alcDriver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS); wait300
-		 * = new WebDriverWait(alcDriver,Duration.ofSeconds(300)); wait2s = new
-		 * WebDriverWait(alcDriver,Duration.ofSeconds(2)); waitms = new
-		 * WebDriverWait(alcDriver,Duration.ofMillis(100));
-		 * alcDriver.get("https://staging-admin.plasticbank.com/#/login");
-		 */
+		
+		  alcDriver = new ChromeDriver(); 
+		  alcDriver.manage().window().maximize();
+		  alcDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5000));
+		  alcDriver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS); wait300
+		  = new WebDriverWait(alcDriver,Duration.ofSeconds(300)); wait2s = new
+		  WebDriverWait(alcDriver,Duration.ofSeconds(2)); waitms = new
+		  WebDriverWait(alcDriver,Duration.ofMillis(100));
+		  alcDriver.get("https://staging-admin.plasticbank.com/#/login");
+		 
 		  
 		 
 		/*
@@ -179,29 +194,33 @@ public class BaseClass {
 		 */
 	          
 	          
-	          
-	          DesiredCapabilities caps = new DesiredCapabilities();
-			  caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-			  caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-			  // caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14"); // Optional
-			  caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
-			  caps.setCapability("newCommandTimeout", 9000);
-			  caps.setCapability("adbExecTimeout", 60000);
-			  caps.setCapability("appWaitActivity", "*");
-			  caps.setCapability("autoGrantPermissions", true);
-			  caps.setCapability("appPackage", "org.plasticbank.app");
-			  caps.setCapability("appActivity", "org.plasticbank.app.MainActivity");
-
-			  URL url = new URL("http://127.0.0.1:4723/wd/hub");
+	       //this desired capibilities is working    
+		/*
+		 * DesiredCapabilities caps = new DesiredCapabilities();
+		 * caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+		 * caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android"); //
+		 * caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14"); // Optional
+		 * caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+		 * caps.setCapability("newCommandTimeout", 9000);
+		 * caps.setCapability("adbExecTimeout", 60000);
+		 * caps.setCapability("appWaitActivity", "*");
+		 * caps.setCapability("autoGrantPermissions", true);
+		 * caps.setCapability("appPackage", "org.plasticbank.app");
+		 * caps.setCapability("appActivity", "org.plasticbank.app.MainActivity");
+		 * 
+		 * URL url = new URL("http://127.0.0.1:4723/wd/hub");
+		 */
 	          
 	          
 			  
-			  pbDriver = new AndroidDriver(url, caps);
-			  pbDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); wait10 =
-			  new WebDriverWait(pbDriver,Duration.ofSeconds(10)); wait3 = new
-			  WebDriverWait(pbDriver,Duration.ofSeconds(3)); wait30 = new
-			  WebDriverWait(pbDriver,Duration.ofSeconds(30)); wait200 = new
-			  WebDriverWait(pbDriver,Duration.ofSeconds(200));   
+		/*
+		 * pbDriver = new AndroidDriver(url, caps);
+		 * pbDriver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS); wait10 =
+		 * new WebDriverWait(pbDriver,Duration.ofSeconds(10)); wait3 = new
+		 * WebDriverWait(pbDriver,Duration.ofSeconds(3)); wait30 = new
+		 * WebDriverWait(pbDriver,Duration.ofSeconds(30)); wait200 = new
+		 * WebDriverWait(pbDriver,Duration.ofSeconds(200));
+		 */   
 			  
 			  
 			  
@@ -224,10 +243,48 @@ public class BaseClass {
 		  branchName = randomBusinessName;       
 		 
 	}
+	
+	
+	public static void generateNo() throws InterruptedException {
+		
+	     Random random = new Random();
 
+	     // Generate 5 unique 6-digit numbers
+	     
+	         int number = 100000 + random.nextInt(900000); // 100000–999999
+	         String strNO = String.valueOf(number);
+	         copyToClipboard(strNO);
+	         sixDigitNumbers.add(number);
+	     
+
+	     // Print the generated numbers
+	     System.out.println("6-digit numbers: " + sixDigitNumbers);
+	     //tap(540,1450);
+	 }
+	 public static void copyToClipboard(String number) {
+	     StringSelection selection = new StringSelection(number);
+	     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+	 }
+     
+	 public static void otpGenearte() {
+		 copyToClipboard("778899");
+	 }
+	 
+	 public void waitForLoader() {
+	 	boolean ispresent= true;
+	 	alcDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); 
+	 	while(ispresent) {
+	 		try {
+	 			loader.click();
+	 		}catch(Exception e) {
+	 			ispresent=false;
+	 		}
+	 	}
+	 	alcDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
+	 }
 	
 	
-	  public void tap(int x, int y) throws InterruptedException {
+	  public static void tap(int x, int y) throws InterruptedException {
 	  Thread.sleep(4000);
 	  PointerInput fingert = new
 	  PointerInput(PointerInput.Kind.TOUCH, "fingert"); 
@@ -414,13 +471,14 @@ public class BaseClass {
 	}
 	@AfterClass
 	public void teardownalchemy() {
-
 		try {
-			
-			alcDriver.quit();
-		}
-		catch (NoSuchSessionException e){
-			System.out.print("No such session exception call"+e.getMessage());
+		    if (alcDriver != null) {
+		        alcDriver.quit();
+		    }
+		} catch (NoSuchSessionException e) {
+		    System.out.print("No such session exception call: " + e.getMessage());
+		} catch (Exception e) {
+		    System.out.print("Unexpected exception during teardown: " + e.getMessage());
 		}
 
 	}
